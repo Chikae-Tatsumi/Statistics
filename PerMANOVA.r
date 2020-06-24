@@ -26,4 +26,4 @@ R2 <- adonis[[1]][,5]
 Pval <-adonis[[1]][,6]
 bind <- cbind(Fval, R2, Pval)
 rownames (bind) <- rownames(adonis[[1]])
-write.csv (bind, "adonis.csv")
+write.csv (bind, "PerMANOVA.csv")
