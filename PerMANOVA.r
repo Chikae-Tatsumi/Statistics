@@ -9,15 +9,16 @@ ASV <- ASV.table [,1:(ncol(ASV.table)-7)]
 ASV.t <- t(ASV)
 
 # If you want to remove NA data
-# DESIGN <- na.omit(DESIGN)
 # bind <- cbind (ASV.t, DESIGN)
 # bind.rm <- na.omit (bind)
 # ASV.t <- bind.rm [, 1:nrow(ASV.table)]
+# DESIGN.rm <- na.omit (DESIGN)
 
 # PerMANOVA
-adonis <- adonis(ASV.t ~ Factor1*Factor2, DESIGN, permutations=10000
+adonis <- adonis(ASV.t ~ Factor1*Factor2, data=DESIGN, permutations=10000
 # , strata = DESIGN$Group
 ) # CHANGE ME
+# You can use DESIGN.rm instead of DESIGN if you removed NA data
 
 # Save
 Fval <- adonis[[1]][,4]
