@@ -2,7 +2,7 @@ library(lme4)
 library(lmerTest)
 
 setwd("~/R/Analysis/1_Test")
-TABLE <- read.csv("aggregated.phylum.class.table.csv",header=T, row.names=1)
+TABLE <- read.csv("metadata.csv",header=T, row.names=1)
 DESIGN <- read.csv("experimental_design.csv",header=T)
 DESIGN <- na.omit(DESIGN)
 
